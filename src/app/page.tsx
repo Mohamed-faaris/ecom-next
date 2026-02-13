@@ -1,37 +1,61 @@
 import Link from "next/link";
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-        <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-          Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
-        </h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/usage/first-steps"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">First Steps →</h3>
-            <div className="text-lg">
-              Just the basics - Everything you need to know to set up your
-              database and authentication.
-            </div>
-          </Link>
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/introduction"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">Documentation →</h3>
-            <div className="text-lg">
-              Learn more about Create T3 App, the libraries it uses, and how to
-              deploy it.
-            </div>
-          </Link>
-        </div>
+    <div className="flex min-h-screen flex-col items-center justify-center bg-zinc-950 p-8 text-white">
+      <h1 className="mb-12 text-6xl font-bold tracking-tighter">
+        SELECT A <span className="text-zinc-500">EXPERIENCE</span>
+      </h1>
+      <div className="grid w-full max-w-5xl grid-cols-1 gap-8 md:grid-cols-3">
+        {/* Theme 1 */}
+        <Link
+          href="/1"
+          className="group relative flex h-96 flex-col justify-end overflow-hidden rounded-sm bg-stone-100 p-8 text-stone-900 transition-transform hover:scale-[1.02]"
+        >
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-60 transition-opacity group-hover:opacity-40" />
+          <div className="relative z-10">
+            <span className="mb-2 block font-serif text-stone-600 italic">
+              01
+            </span>
+            <h2 className="font-serif text-3xl font-medium">Minimal Luxury</h2>
+            <p className="mt-2 text-sm text-stone-600">
+              Refined. Elegant. Timeless.
+            </p>
+          </div>
+        </Link>
+
+        {/* Theme 2 */}
+        <Link
+          href="/2"
+          className="group relative flex h-96 flex-col justify-end overflow-hidden border-2 border-green-500 bg-black p-8 text-white transition-transform hover:scale-[1.02]"
+        >
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-40 grayscale transition-opacity group-hover:opacity-20" />
+          <div className="relative z-10 font-mono">
+            <span className="mb-2 block text-green-400">02</span>
+            <h2 className="text-4xl font-black tracking-widest text-green-400 uppercase">
+              STREET
+            </h2>
+            <p className="mt-2 text-xs tracking-widest text-zinc-400 uppercase">
+              Bold. Raw. Chaotic.
+            </p>
+          </div>
+        </Link>
+
+        {/* Theme 3 */}
+        <Link
+          href="/3"
+          className="group relative flex h-96 flex-col justify-end overflow-hidden rounded-2xl bg-blue-600 p-8 text-white transition-transform hover:scale-[1.02]"
+        >
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-overlay transition-opacity group-hover:opacity-10" />
+          <div className="relative z-10">
+            <span className="mb-2 block font-medium opacity-70">03</span>
+            <h2 className="text-3xl font-bold tracking-tight">Active Tech</h2>
+            <p className="mt-2 text-sm font-medium opacity-80">
+              Performance. Speed. Grid.
+            </p>
+          </div>
+        </Link>
       </div>
-    </main>
+    </div>
   );
 }
